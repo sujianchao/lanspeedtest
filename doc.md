@@ -4,6 +4,36 @@
 > Version 5.2.3
 > [https://github.com/librespeed/speedtest/](https://github.com/librespeed/speedtest/)
 
+## 安装一个与 test.ustc.edu.cn 相同功能的测速网站
+
+1. 安装Linux、mysql数据库等
+2. 执行以下命令下载文件
+```
+cd /var/www/html
+git clone http://github.com/bg6cq/speedtest/
+chown og-rwx .git
+```
+
+3. 执行以下命令设置数据库
+```
+mysql
+
+create USER 'speedtest'@'localhost' IDENTIFIED BY 'speedtest';
+create database speedtest;
+GRANT ALL ON speedtest.* TO 'speedtest'@'localhost';
+flush privileges;
+exit
+
+mysql speedtest < /var/www/html/speedtest/results/telemetry_mysql.sql
+```
+
+## 在原文件修改的部分
+* index.html 源自 example-singleServer-full.html，文字汉化，限定测试时间5秒，增加结果显示部分
+* results/result.php 结果显示程序
+* results/telemetry_mysql.sql 修改为myisam引擎，加快count执行
+* results/telemetry_settings.php 修改mysql数据库密码等信息
+
+
 ## Introduction
 LibreSpeed is a Free and Open Source speedtest that you can host on your server(s), and users can run in their browser.
 

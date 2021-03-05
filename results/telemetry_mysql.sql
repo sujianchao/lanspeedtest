@@ -27,12 +27,12 @@ CREATE TABLE `speedtest_users` (
   `extra` text,
   `ua` text NOT NULL,
   `lang` text NOT NULL,
-  `dl` text,
-  `ul` text,
-  `ping` text,
-  `jitter` text,
+  `dl` float(10,2),
+  `ul` float(10,2),
+  `ping` float(10,2),
+  `jitter` float(10,2),
   `log` longtext
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=myisam DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
@@ -43,6 +43,13 @@ CREATE TABLE `speedtest_users` (
 --
 ALTER TABLE `speedtest_users`
   ADD PRIMARY KEY (`id`);
+ALTER TABLE `speedtest_users`
+  ADD KEY  ktm(`timestamp`);
+ALTER TABLE `speedtest_users`
+  ADD KEY kul(`ul`);
+ALTER TABLE `speedtest_users`
+  ADD KEY kdl(`dl`);
+
 
 --
 -- AUTO_INCREMENT for dumped tables
