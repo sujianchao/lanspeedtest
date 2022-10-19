@@ -32,7 +32,7 @@ CREATE TABLE `speedtest_users` (
   `ping` float(10,2),
   `jitter` float(10,2),
   `log` longtext
-) ENGINE=myisam DEFAULT CHARSET=latin1;
+) ENGINE=myisam DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables

@@ -39,7 +39,7 @@ Works with mobile versions too.
 A template to build an Android client for your LibreSpeed installation is available [here](https://github.com/librespeed/speedtest-android).
 
 ## Docker
-Please see the `docker` branch
+A docker image is available on the [Docker Hub](https://registry.hub.docker.com/r/adolfintel/speedtest), see `doc_docker.md` for more info about it
 
 ## Go backend
 A Go implementation is available in the [`speedtest-go`](https://github.com/librespeed/speedtest-go) repo, maintained by [Maddie Zhan](https://github.com/maddie).
@@ -52,7 +52,7 @@ A partial Node.js implementation is available in the `node` branch, developed by
 [Donate with PayPal](https://www.paypal.me/sineisochronic)  
 
 ## License
-Copyright (C) 2016-2021 Federico Dossena
+Copyright (C) 2016-2022 Federico Dossena
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU Lesser General Public License as published by
