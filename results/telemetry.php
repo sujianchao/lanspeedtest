@@ -17,6 +17,11 @@ $ping = $_POST['ping'];
 $jitter = $_POST['jitter'];
 $log = $_POST['log'];
 
+if( ($dl == "") || ($dl>3000))
+	exit(1);
+if( ($ul == "") || ($ul>3000))
+	exit(1);
+
 if (isset($redact_ip_addresses) && true === $redact_ip_addresses) {
     $ip = '0.0.0.0';
     $ipv4_regex = '/(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/';
