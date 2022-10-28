@@ -18,9 +18,9 @@ $ping = $_POST['ping'];
 $jitter = $_POST['jitter'];
 $log = $_POST['log'];
 
-if( ($dl == "") || ($dl>3000))
+if( ($dl == "") || ($dl>3000) || ($dl<0) )
 	exit(1);
-if( ($ul == "") || ($ul>3000))
+if( ($ul == "") || ($ul>3000) || ($ul<0) )
 	exit(1);
 
 if (isset($redact_ip_addresses) && true === $redact_ip_addresses) {

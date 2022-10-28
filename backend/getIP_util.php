@@ -15,6 +15,12 @@ function getClientIp() {
         $ip = $_SERVER['REMOTE_ADDR'];
     }
 
+    $ip = $_SERVER['REMOTE_ADDR'];
+
+    if(!filter_var($ip, FILTER_VALIDATE_IP)) {
+       // it's not a valid IP
+       $ip = "0.0.0.0";
+    }
     return preg_replace('/^::ffff:/', '', $ip);
 }
 
